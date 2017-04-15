@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width, initial-scale=1">
+<link rel=stylesheet href="/style/style.css">
+{% if is_post %}
+<title>{{ title }}</title>
+{% else %}
+<title>Yonathan’s Blog</title>
+{% endif %}
+
+{% if is_post %}
+{% include '_layouts/post.liquid' %}
+{% else %}
+{{ content }}
+{% endif %}

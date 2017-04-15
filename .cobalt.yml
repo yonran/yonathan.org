@@ -1,0 +1,13 @@
+name: cobalt blog
+source: "./"  # slash is needed https://github.com/cobalt-org/cobalt.rs/issues/183
+dest: "build"
+ignore:
+  - .git/*
+  - build/*
+
+
+# path where the RSS file should be generated
+rss: rss.xml
+name: Yonathan’s blog
+description: Assorted care-free thoughts
+link: https://blog.yonathan.org

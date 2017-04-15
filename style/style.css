@@ -1,0 +1,20 @@
+html {
+    font-family: Cambria,Georgia,"Times New Roman",Times,serif;
+    font-size: 20px;
+    line-height: 1.5;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-family: sans-serif;
+    line-height: 1.2;
+}
+body {
+    max-width: 740px;
+    padding: 20px;
+    position:relative;
+    margin: 0 auto;
+}
+@media (max-width: 767px) {
+    html {
+        font-size: 18px;
+    }
+}
