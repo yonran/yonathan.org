@@ -76,7 +76,7 @@ I am also receptive to the idea that investments in a neighborhood, including ma
 
 The Residential Nexus Analysis itself should never be used to determine policy. Perhaps we could keep it around until such a time that the City is sued by a developer and it is tested in court, but I think it would be more prudent to structure the Inclusionary Housing requirement so as not to depend on the Residential Nexus Analysis either intellectually or legally.
 
-Yonathan Randolph is a resident of the Ingleside of almost four years.
+Yonathan Randolph is a resident of the Ingleside district of San Francisco of almost four years.
 
 Edits:
 
