@@ -1,0 +1,12 @@
+[Unit]
+Description=Check/renew tls certificate for yonathan.org daily
+Requires=network.target
+
+[Timer]
+OnCalendar=daily
+# run immediately if it missed at least one while shut down
+Persistent=true
+Unit=refresh-cert-yonathan.org.service
+
+[Install]
+WantedBy=timers.target

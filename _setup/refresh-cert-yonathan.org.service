@@ -1,0 +1,8 @@
+[Unit]
+Description=Refresh tls certificate for yonathan.org
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/refresh-cert-yonathan.org.sh
+User=root
+Group=root

@@ -19,13 +19,14 @@ export GCE_DOMAIN=blog.yonathan.org
 ACME_SERVER=https://acme-v01.api.letsencrypt.org/directory # prod
 #ACME_SERVER=https://acme-staging.api.letsencrypt.org/directory # staging
 # The first domain will be Subject CN and will be the name of the files
-lego \
+sudo lego \
     --email=yonathan@gmail.com \
     --domains=yonathan.org --domains=blog.yonathan.org --domains=www.yonathan.org \
     --dns=gcloud \
     --server=$ACME_SERVER \
     --exclude=http-01 --exclude=tls-sni-01 \
     --dns-resolvers=ns-cloud-b1.googledomains.com \
+    --path=/etc/lego \
     run
 
 
