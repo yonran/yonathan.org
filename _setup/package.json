@@ -1,0 +1,16 @@
+{
+  "name": "yonathan.org",
+  "version": "0.0.0",
+  "description": "Build files for some assets",
+  "main": "build-images.js",
+  "scripts": {
+    "test": "exit 0 && echo \"Error: no test specified\" && exit 1",
+    "build-images": "node build-images.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^4.10.2",
+    "jsdom": "^11.2.0"
+  }
+}
