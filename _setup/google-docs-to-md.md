@@ -12,5 +12,5 @@ Replace links:
     const fs = require("fs");
     let buf = fs.readFileSync("/tmp/prop13.md")
     let s = buf.toString("utf-8")
-    let t = s.replace(/\(https:\/\/www.google.com\/url\?q=([^)]*)\)/g, (match,p1) => "(" + unescape(p1) + ")")
+    let t = s.replace(/\(https:\/\/www.google.com\/url\?q=([^)]*)\)[^)]*/g, (match,p1) => "(" + unescape(p1) + ")")
     fs.writeFileSync("/tmp/13b.md", t)
