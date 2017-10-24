@@ -121,10 +121,19 @@ const y = d3.scaleLinear().range([height, 0])
 x.domain(d3.extent(data, d => d.year))
 y.domain([0, d3.max(data, d => Math.max(d.factoredvalue, d.marketvalue))])
 
+const svgWidth = margin.left + width + margin.right
+const svgHeight = margin.top + height + margin.bottom
 const svg = d3.select(window.document).select("body").append("svg")
     .attr("xmlns", "http://www.w3.org/2000/svg")
-    .attr("width", margin.left + width + margin.right)
-    .attr("height", margin.top + height + margin.bottom)
+    // Don't set width and height, which would become the
+    // "specified" width/height of the svg image in the document
+    // (even if it's included by img, setting svg's width and height
+    // is like setting width and height on the img element)
+    // Instead, we want the img to shrink when viewed on an iPhone
+    // by setting only the intrinsic width and height (viewBox)
+    // .attr("width", svgWidth)
+    // .attr("height", svgHeight)
+    .attr("viewBox", `0 0 ${svgWidth} ${svgHeight}`)
 svg.append("title")
     .text("Property value trajectory")
 svg.append("desc")
