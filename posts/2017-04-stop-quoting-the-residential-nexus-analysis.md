@@ -1,12 +1,15 @@
-extends: default.liquid
+layout: default.liquid
 
 title: Stop Quoting the Residential Nexus Analysis
-date: 15 April 2017 17:30:00 -0700
-date_formatted: Sat, 15 Apr 2017
-yyyy: "2017"
-mm: "04"
-allow_comments: true
+published_date: 2017-04-15 17:30:00 -0700
+data:
+  is_post: true
+  date_formatted: Sat, 15 Apr 2017
+  yyyy: "2017"
+  mm: "04"
+  allow_comments: true
 ---
+
 Re: Inclusionary Housing Requirements legislation (Peskin and Kim [Board File No. [161351](https://sfgov.legistar.com/LegislationDetail.aspx?ID=2909828&GUID=BB4FBE55-FF04-442F-A446-832E61E18CB8)] vs. Safai, Breed, and Tang [Board File No. [170208](https://sfgov.legistar.com/LegislationDetail.aspx?ID=2974438&GUID=52814392-603F-4C08-8EF6-ADC769CD2325)])
 
 To San Francisco Planning Commissioners and Board of Supervisors:

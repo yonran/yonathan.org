@@ -2,14 +2,14 @@
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width, initial-scale=1">
 <link rel=stylesheet href="/style/style.css">
-{% if is_post %}
-<title>{{ title }}</title>
+{% if page.data.is_post %}
+<title>{{ page.title }}</title>
 {% else %}
 <title>Yonathan’s Blog</title>
 {% endif %}
 
-{% if is_post %}
-{% include '_layouts/post.liquid' %}
+{% if page.data.is_post %}
+{% include 'post.liquid' %}
 {% else %}
-{{ content }}
+{{ page.content }}
 {% endif %}

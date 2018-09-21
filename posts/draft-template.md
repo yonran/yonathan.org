@@ -1,8 +1,8 @@
-extends: default.liquid
+layout: default.liquid
 
 title: First Post
-date: 14 January 2016 21:00:30 -0500
-draft: true
+published_date: 2016-01-14 21:00:30 -0500
+is_draft: true
 ---
 
 # This is our first Post!

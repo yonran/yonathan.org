@@ -1,12 +1,14 @@
-extends: default.liquid
+layout: default.liquid
 
 title: How to keep a low Proposition 13 property tax when you transfer property in California
-date: 12 Oct 2017 23:00:00 -0700
-date_formatted: Thu, 12 Oct 2017
-yyyy: "2017"
-mm: "10"
-allow_comments: true
-draft: false
+published_date: 2017-10-12 23:00:00 -0700
+data:
+  is_post: true
+  date_formatted: Thu, 12 Oct 2017
+  yyyy: "2017"
+  mm: "10"
+  allow_comments: true
+is_draft: false
 ---
 
 Property owners in California know that their property taxes only go up about 2% per year, no matter how valuable the property has become, until the property undergoes a change in ownership or new construction. Many property owners are also aware of the exclusions from change in ownership for transfers between parents and children. But what is less known is that upon death, inexperienced trustees typically divide the property evenly, leaving siblings, aunts/uncles, and cousins to sell the property amongst themselves and undergo a majority change in ownership and large tax increase. But with a little foresight, the owner or trustee can divide the value of the property evenly while ownership of the property goes to one descendant, keeping the assessed value low indefinitely.
