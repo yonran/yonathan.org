@@ -22,4 +22,4 @@ const svgText = svgElement.outerHTML
     .replace(/fecomposite/g, "feComposite")
     .replace(/feflood/g, "feFlood")
     .replace(/feoffset/g, "feOffset")
-fs.writeFileSync("../build/images/baseyearvalue.svg", svgText, {encoding: "UTF-8"})
+fs.writeFileSync("../_site/images/baseyearvalue.svg", svgText, {encoding: "UTF-8"})
