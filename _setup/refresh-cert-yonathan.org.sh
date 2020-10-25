@@ -3,24 +3,20 @@
 export GOPATH=/home/yonathan/gopath
 PATH=$PATH:$GOPATH/bin
 
-export GCE_PROJECT=$(curl --silent -H 'Metadata-Flavor: Google' 169.254.169.254/computeMetadata/v1/project/project-id)
-export GCE_DOMAIN=www.yonathan.org
 # prod is rate-limited to 5 failures per hour https://letsencrypt.org/docs/rate-limits/ and 5 successes per week
-ACME_SERVER=https://acme-v01.api.letsencrypt.org/directory # prod
-# SOA DNS server for the domain (for google, it is different depending on zone!)
-SOA_SERVER=ns-cloud-b1.googledomains.com
-#ACME_SERVER=https://acme-staging.api.letsencrypt.org/directory # staging
+#ACME_SERVER=https://acme-v01.api.letsencrypt.org/directory # prod
+ACME_SERVER=https://acme-staging.api.letsencrypt.org/directory # staging
 # The first domain will be Subject CN and will be the name of the files
 lego \
     --email=yonathan@gmail.com \
     --domains=yonathan.org --domains=blog.yonathan.org --domains=www.yonathan.org \
     --dns=gcloud \
+    --http.webroot=/var/www/html \
     --server=$ACME_SERVER \
-    --exclude=http-01 --exclude=tls-sni-01 \
-    --dns-resolvers=$SOA_SERVER \
-    --path /etc/lego \
+    --exclude=tls-sni-01 \
+    --path /tmp/lego \
     renew \
-    --days=14
+    --days=30
 
 gsutil rsync -c -r -d /etc/lego/ gs://yonathan-config/lego/
 
