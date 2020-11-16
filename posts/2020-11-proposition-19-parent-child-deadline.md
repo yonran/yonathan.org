@@ -75,7 +75,7 @@ Grandchild can also transfer property to grandparent.
    </td>
   </tr>
   <tr>
-   <td colspan="2" >Note: Parents must have died while grandparent is still alive to use grandparent-grandchild transfer
+   <td colspan="2" >Note: Parents must be dead at the time of transfer to use grandparent-grandchild exclusion
    </td>
   </tr>
 </table>
