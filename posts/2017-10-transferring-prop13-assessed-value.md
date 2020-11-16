@@ -11,7 +11,7 @@ data:
 is_draft: false
 ---
 
-Update (November 16, 2020): Due to Proposition 19 ([ACA 11](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200ACA11)), some provisions are changing as of 2021. See [2020 inheritance update for the inheritance options before Proposition 19 goes into effect](2020-11-proposition-19-parent-child-deadline.html)
+Update (November 16, 2020): Due to Proposition 19 ([ACA 11](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200ACA11)), some provisions are changing in 2021. See [2020 inheritance update for the inheritance options before Proposition 19 goes into effect](2020-11-proposition-19-parent-child-deadline.html)
 
 Property owners in California know that their property taxes only go up about 2% per year, no matter how valuable the property has become, until the property undergoes a change in ownership or new construction. Many property owners are also aware of the exclusions from change in ownership for transfers between parents and children. But what is less known is that upon death, inexperienced trustees typically divide the property evenly, leaving siblings, aunts/uncles, and cousins to sell the property amongst themselves and undergo a majority change in ownership and large tax increase. But with a little foresight, the owner or trustee can divide the value of the property evenly while ownership of the property goes to one descendant, keeping the assessed value low indefinitely.
 
