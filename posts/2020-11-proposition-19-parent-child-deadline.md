@@ -16,10 +16,9 @@ is_draft: true
 
 On November 3rd, 2020, California voters passed Proposition 19 ([ACA 11](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200ACA11)), which expanded property tax portability in exchange for limiting property tax inheritance. Portability means that old people can sell their house and buy a replacement and keep their low Proposition 13 assessment. Tax inheritance means that parents can transfer their low Proposition 13 assessment on to their children in certain circumstances. For more information about these provisions, see my [previous blog post](2017-10-transferring-prop13-assessed-value.html).
 
-The California Association of Realtors® has long wanted to expand portability so that older folks could move to any house in any county because real estate agents benefit from increased turnover. However, their last attempt, Proposition 5 of [November 2018](http://vigarchive.sos.ca.gov/2018/general/), failed 60%-40% after the Legislative Analyst warned in the Voter Guide that it would cost local governments up to $1 billion per year. So the realtors needed to find a compromise that would pay for their desired portability expansion. Fortunately for them, an LA Times article showed that many people who inherit a house keep the low tax assessment but rent out the property for profit, including an actor from the movie _The Big Lebowski_ (1998) ([Liam Dillon and Ben Poston, “California Homeowners Get to Pass Low Property Taxes to Their Kids: It’s Proved Highly Profitable to an Elite Group,” Los Angeles Times, August 17, 2018](https://www.latimes.com/politics/la-pol-ca-california-property-taxes-elites-201808-htmlstory.html)), and these landlords have no need of a subsidy. So this year the Realtors® came back with Proposition 19, which is a compromise that will raise more revenue by curtailing the inheritance exclusion and will dedicate funding to firefighting efforts. It won endorsements from almost everybody who opposed Proposition 5 two years ago, and voters barely approved Proposition 19 with approximately 51%-49% ([ballot measure results](https://electionresults.sos.ca.gov/returns/ballot-measures)).
+The California Association of Realtors® has long wanted to expand portability so that older folks could move to any house in any county because real estate agents benefit from increased turnover. However, their last attempt, Proposition 5 of [November 2018](http://vigarchive.sos.ca.gov/2018/general/), failed 60%-40% after the Legislative Analyst warned in the Voter Guide that it would cost local governments up to $1 billion per year. So the realtors needed to find a compromise that would pay for their desired portability expansion. Fortunately for them, an LA Times article showed that many people who inherit a house keep the low tax assessment but rent out the property for profit, including an actor from the movie _The Big Lebowski_ (1998) ([Liam Dillon and Ben Poston, “California Homeowners Get to Pass Low Property Taxes to Their Kids: It’s Proved Highly Profitable to an Elite Group,” Los Angeles Times, August 17, 2018](https://www.latimes.com/politics/la-pol-ca-california-property-taxes-elites-201808-htmlstory.html)), and there’s no public purpose in giving one set of landlords a subsidy compared to other landlords merely because they happened to inherit the property. So this year the Realtors® came back with Proposition 19, which is a compromise that will raise more revenue by curtailing the inheritance exclusion and will dedicate funding to firefighting efforts. It won endorsements from almost everybody who opposed Proposition 5 two years ago, and voters barely approved Proposition 19 with approximately 51%-49% ([ballot measure results](https://electionresults.sos.ca.gov/returns/ballot-measures)).
 
-Theoretically this change makes property taxes more means-tested; seniors, disabled people, and victims of a disaster are more in need of a tax discount than heirs who most likely don’t need any subsidy on top of their inheritance. However, in their infinite wisdom, the legislature made the provisions apply starting February 16, 2021, which gives parents time to adjust their estate plan to minimize the tax burden on their family. This blog post examines some of the options that people have to act before Proposition 19 goes into effect.
-
+This change makes the property tax cap somewhat better targeted at those who need it; seniors, disabled people, and victims of a disaster are more in need of a tax discount than heirs who inherit a valuable property. However, in their infinite wisdom, the legislature made the provisions kick in on February 16th, 2021, which gives parents a little bit of time to adjust their estate plan to minimize the tax burden on their family. This blog post examines some of the options that people have to act before Proposition 19 goes into effect.
 
 ## How does Proposition 19 change the rules for parent-child transfers?
 
@@ -27,9 +26,9 @@ Proposition 19 severely limits the exclusion from reassessment for parent-child 
 
 Before Proposition 19, parents could transfer their house of unlimited value to their child without the assessment going up. And parents could also transfer a vacation house or commercial property or rental property to their children of a combined total of $1 million of assessed value (which could be much less than the market value) without reappraisal.
 
-After Proposition 19, only the parent’s principal residence, called the “family home”, is excluded from reassessment to market value, and even on that house only the first $1 million (of assessed value) is excluded. In addition, the child must move into the house and claim the homeowner’s exemption within one year of the transfer. As far as I can tell, if multiple siblings inherit the house, then each transferee must live in the house, or else their portion will be reassessed to market value.
+After Proposition 19, only the parent’s principal residence, called the “family home”, is excluded from reassessment to market value, and even on that house only the first $1 million (of assessed value) is excluded. In addition, the child must move into the house and claim the homeowner’s exemption within one year of the transfer. Depending on how the legislature implements the constitutional amendment, if multiple siblings inherit the house, then each transferee may have to live in the house, or else their portion will be reassessed to market value.
 
-Proposition 19’s restrictive inheritance rules become effective for transfers that happen after February 16, 2021. That means **the deadline for parent-child and grandparent-grandchild transfers under the old rules is February 15, 2021.** If you have rental or vacation properties that you want to transfer to your children, or if your children will not be moving into the house within one year, then you must transfer them on or before the day after Valentine’s Day in order for the child to pay the same property taxes as the parent!
+Proposition 19’s restrictive inheritance rules become effective for transfers that happen after February 16th, 2021. That means **the deadline for parent-child and grandparent-grandchild transfers under the old rules is February 15th, 2021.** If you have rental or vacation properties that you want to transfer to your children, or if your children will not be moving into the house within one year, then you must transfer them on or before the day after Valentine’s Day in order for the child to pay the same property taxes as the parent!
 
 This table summarizes the changes to the inheritance exclusion from reassessment in Proposition 19:
 
@@ -51,7 +50,7 @@ This table summarizes the changes to the inheritance exclusion from reassessment
   <tr style="border: 1px solid black; vertical-align: top">
    <th rowspan="2" >Parent-Child
    </th>
-   <td>Parent can transfer principal residence of unlimited value to child; each parent can transfer first $1 million of other property to any children. Child does not have to live in any property
+   <td>Parent could transfer principal residence of unlimited value to child; each parent could transfer first $1 million of other property to any children. Child did not have to live in the property
    </td>
    <td>Parent can transfer only first $1 million of principal residence to child. Child must live in the property within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building), then it will be reappraised.
    </td>
@@ -63,13 +62,15 @@ This table summarizes the changes to the inheritance exclusion from reassessment
   <tr style="border: 1px solid black; vertical-align: top">
    <th rowspan="2" >Grandparent-Grandchild
    </th>
-   <td>Grandparent can transfer principal residence of unlimited value to child. grandparent can transfer first $1 million of other property to child, and child can receive first $1 million of other property
+   <td>Grandparent could transfer principal residence of unlimited value to grandchild. grandparent can transfer first $1 million of other property to grandchild. Grandchild did not have to live in the property.
 <p>
-Only grandparent can transfer to grandchild
+Grandchild could only receive one principal residence and $1 million of other property from any parent or grandparent at the time of transfer
+<p>
+Grandchild could not transfer to grandparent
    </td>
    <td>Grandparent can transfer only first $1 million of principal residence to grandchild. Grandchild must live in the property within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building), then it will be reappraised.
 <p>
-Restriction on the child only receiving 1 primary residence is removed.
+Restriction on the grandchild only receiving 1 principal residence and $1 million is removed.
 <p>
 Grandchild can also transfer property to grandparent.
    </td>
@@ -79,6 +80,8 @@ Grandchild can also transfer property to grandparent.
    </td>
   </tr>
 </table>
+
+
 
 ## Should you transfer property to a child before Proposition 19’s effective date?
 
@@ -92,16 +95,16 @@ If the child will keep the property other than a “family home”, then it may 
 
 The parent can do a blend of selling and gifting by selling at a price between the two. If the parent sells the property at a price above his tax basis but below the current fair market value, then the parent and child will share the capital gains tax burden. For example, the parent may choose to sell his home to his child at a price of the purchase price plus $250,000, in which case the child will owe no extra property tax, the parent will owe no capital gains tax, and the child will owe capital gains taxes of the difference between his purchase price and sale price when he sells.
 
-Another option to potentially reduce capital gains taxes is to spread the purchase over time. The child can purchase the property from the parent with an installment agreement over 30 years. The change in ownership for property taxes would happen on the date of the purchase agreement, which can be excluded from parent-child transfer if done before February 16, 2021. Then the parent will pay capital gains taxes each year rather than all at once, and if the stepped-up basis still exists when the parent dies, then the remaining balance will be stepped up to market value, reducing the child’s eventual capital gains tax.
+Another option to potentially reduce capital gains taxes is to spread the purchase over time. The child can purchase the property from the parent with an installment agreement over 30 years. The change in ownership for property taxes would happen right away on the date of the purchase agreement, which can be excluded from parent-child transfer if done before February 16, 2021. Then the parent will pay capital gains taxes each year rather than all at once, which can reduce capital gains taxes compared to an up-front sale which would raise the parent’s income tax bracket. And if the stepped-up basis still exists when the parent dies and the property is not paid off, then the remaining balance will be stepped up to market value, reducing the child’s eventual capital gains tax.
 
-There are a couple more esoteric options that you can pursue with your tax attorney to transfer the property before February 16, 2021 for property tax purposes but not for capital gains tax purposes. In the definition of “change in ownership” in [RTC 61](http://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=61.), it says the parent could make a long-term lease to the child (a lease with options to renew for more than 35 years), or the parent could give a life estate of income or occupancy to the child, and this would be considered an immediate “change in ownership” for property tax purposes but may allow the child to defer “acquiring” for income tax purposes.
+There are a couple more esoteric options that you can pursue with your tax attorney to transfer the property before February 16th, 2021 for property tax purposes but not for capital gains tax purposes. In the definition of “change in ownership” in [RTC 61](http://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=61.), it says the parent could make a long-term lease to the child (a lease with options to renew for more than 35 years), or the parent could give a life estate of income or occupancy to the child, and this would be considered an immediate “change in ownership” for property tax purposes but may allow the child to defer “acquiring” for income tax purposes.
 
-If you have property that you wish to transfer to a child that does not qualify for Proposition 19 because it is not your principal residence, the child does not want to move in within one year, or it is a principal residence but it is assessed at more than $1 million, then consider transferring the property before Proposition 19 takes effect on February 16, 2021.
+If you have property that you wish to transfer to a child that does not qualify for Proposition 19 because it is not your principal residence, the child does not want to move in within one year, or it is assessed at more than $1 million, then consider transferring the property before Proposition 19 takes effect on February 16th, 2021.
 
 
 ## What loopholes still exist after Proposition 19 becomes effective?
 
-After Proposition 19 goes into effect on Feb. 16th, 2021, only the principal residence of the parent and child qualifies for the parent-child exclusion. Many of the tricks that I mentioned in the [previous blog post](http://2017-10-transferring-prop13-assessed-value.html), including the tricks to transfer property in a trust long after death, probably won’t work anymore. But there are a few tricks from that post that you still can use if you are reading after 2021. For example:
+After Proposition 19 goes into effect on Feb. 16th, 2021, only the principal residence of the parent and child qualifies for the parent-child exclusion. Many of the tricks that I mentioned in the [previous blog post](http://2017-10-transferring-prop13-assessed-value.html), including the tricks to transfer property held by a trust long after the parent’s death, probably won’t work anymore. But there are a few tricks from that post that you still can use if you are reading after 2021. For example:
 
 When a parent dies and her house is in a trust, the trustee can still arrange for one of the children to receive the house while the other children inherit cash. But the child must move in within one year for the transfer to be excluded from change in ownership.
 
@@ -116,6 +119,6 @@ But for any property that the parent does not live in the time of transfer, you�
 
 ## Conclusion
 
-Proposition 19’s new rules for the parent-child and grandparent-grandchild exclusion from change in ownership give parents an incentive to expedite their estate plan. You have until the day after Valentine’s Day to transfer your property under the old rule, which allowed transfers of non-principal residence property and did not require the child to live in the house. But don’t stress your old folks out too much; remember that the extra 1.2% property tax per year on the gains and 15% capital gains taxes are much smaller than the principal. And family relationships are more important than property. But if you are comfortable having a discussion about succession plans, then this may be an interesting topic of conversation this Thanksgiving.
+Proposition 19’s new rules for the parent-child and grandparent-grandchild exclusion from change in ownership give parents an incentive to expedite their estate plan. You have until the day after Valentine’s Day to transfer your property under the old rule, which allowed transfers of non-principal residence property and did not require the child to live in the house. But don’t stress your old folks out too much; remember that the extra 1.2% property tax per year on the gains and 25% capital gains taxes are much smaller than the principal. And family relationships are more important than property. But if you are comfortable having a discussion about succession plans, then this may be an interesting topic of conversation this Thanksgiving.
 
 This blog post is information, not legal advice. Talk to your attorney or CPA to see if tax avoidance is right for you.
