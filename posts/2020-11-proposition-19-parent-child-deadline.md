@@ -2,10 +2,10 @@ layout: default.liquid
 
 #title: Is there any loophole to avoid reassessment upon inheritance because of California Proposition 19?
 title: The Proposition 19 parent-child deadline and loopholes
-published_date: 2020-11-16 09:00:00 -0800
+published_date: 2020-11-18 09:00:00 -0800
 data:
   is_post: true
-  date_formatted: Mon, 16 Nov 2020
+  date_formatted: Wed, 18 Nov 2020
   yyyy: "2020"
   mm: "11"
   allow_comments: true
