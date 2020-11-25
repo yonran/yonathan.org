@@ -85,7 +85,7 @@ The California Association of Realtors® has long wanted to expand portability s
 
 Before Proposition 19, parents could transfer their house of unlimited value to their child without the assessment going up. And parents could also transfer a vacation house or commercial property or rental property to their children of a combined total of $1 million of assessed value (which could be much less than the market value) without reappraisal. (Propositions 58 and 193, [Const. Article XIII A Section 1](https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=CONS&division=&title=&part=&chapter=&article=XIII%20A)(h), [RTC 63.1](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=63.1.))
 
-After Proposition 19, for residential property, only the parent’s principal residence, called the “family home”, is excluded from reassessment to market value, and even on that house only the first $1 million (of assessed value) is excluded. In addition, the child must move into the house and claim the homeowner’s exemption within one year of the transfer. Depending on how the legislature implements the constitutional amendment, if multiple siblings inherit the house, then each transferee may have to live in the house, or else their portion will be reassessed to market value.
+After Proposition 19, for residential property, only the parent’s principal residence, called the “family home”, is excluded from reassessment to market value, and even on that house only the first $1 million (of assessed value discount) is excluded. If the fair market value is more than $1 million above the old assessed value, then only the first $1 million of the difference is preserved when the property is transferred to the child. In other words, assuming that the tax rate is about 1.2%, the maximum property tax discount from a tax on fair market value that a child can inherit will be about $1,000 per month. In addition, the child must move into the house and claim the homeowner’s exemption within one year of the transfer. Depending on how the legislature implements the constitutional amendment, if multiple siblings inherit the house, then each transferee may have to live in the house, or else their portion will be reassessed to market value.
 
 For commercial property, only “family farms” can be transferred to a child without reassessment to market value.
 
@@ -114,7 +114,7 @@ This table summarizes the changes to the inheritance exclusion from reassessment
    </th>
    <td>Parent could transfer principal residence of unlimited value to child; each parent could transfer first $1 million of other property to any children. Child did not have to live in the property
    </td>
-   <td>Parent can transfer only first $1 million of family home or family farm to child. Child must live in a family home within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building) or family farm, then it will be reappraised.
+   <td>Parent can transfer only first $1 million of assessed value discount of family home or family farm to child. Child must live in a family home within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building) or family farm, then it will be reappraised.
    </td>
   </tr>
   <tr style="border: 1px solid black; vertical-align: top">
@@ -130,7 +130,7 @@ Grandchild could only receive one principal residence and $1 million of other pr
 <p>
 Grandchild could not transfer to grandparent
    </td>
-   <td>Grandparent can transfer only first $1 million of family home or family farm to grandchild. Grandchild must live in a family home within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building) or family farm, then it will be reappraised.
+   <td>Grandparent can transfer only first $1 million of assessed value discount of family home or family farm to grandchild. Grandchild must live in a family home within the first year after transfer. If the property is not the principal residence (including the other units in a multi-unit building) or family farm, then it will be reappraised.
 <p>
 Restriction on the grandchild only receiving 1 principal residence and $1 million is removed.
 <p>
@@ -145,7 +145,7 @@ Grandchild can also transfer property to grandparent.
 
 ## <a id=should-you-transfer-property-before-proposition-19>Should you transfer property to a child before February 16, 2021?</a>
 
-You can avoid Proposition 19 and use the old Proposition 58/193 rules instead if you transfer property before February 16th, 2021, to reduce the property taxes that the child will have to pay. So if you have a rental property, or your child will not live in your home, or your home is assessed at more than $1 million, then you can avoid reassessment if you transfer it to a child now.
+You can avoid Proposition 19 and use the old Proposition 58/193 rules instead if you transfer property before February 16th, 2021, to reduce the property taxes that the child will have to pay. So if you have a rental property, or your child will not live in your home, or your home is worth more than $1 million above its assessed value, then you can avoid reassessment if you transfer it to a child now.
 
 But if you transfer now, then you may owe capital gains taxes and lose out on the step-up in basis, because the federal capital gains step-up in basis requires you to transfer the property upon death, not earlier ([26 USC §1014](https://www.law.cornell.edu/uscode/text/26/1014), [IRS Publication 551](https://www.irs.gov/publications/p551#idm140486307579360)). The step-up in basis allows an inheritor to profit from all the gains of the previous owner when that owner dies without anyone paying capital gains tax on those gains.
 
@@ -188,7 +188,7 @@ If the parent owns combined property that is assessed at more than $1,000,000, t
 
 There are a couple more esoteric options that you can pursue with your tax attorney to transfer the property before February 16th, 2021 for property tax purposes but not for capital gains tax purposes. In the definition of “change in ownership” in [RTC 61](http://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=61.), it says the parent could make a long-term lease to the child (a lease with options to renew for more than 35 years), or the parent could give a life estate of income or occupancy to the child, and this would be considered an immediate “change in ownership” for property tax purposes but may allow the child to defer “acquiring” for income tax purposes. Or maybe you could figure out a way to transfer the land but not the building.
 
-If you have property that you wish to transfer to a child that does not qualify for Proposition 19 because it is not your principal residence, the child does not want to move in within one year, or it is assessed at more than $1 million, then consider transferring the property before Proposition 19 takes effect on February 16th, 2021.
+If you have property that you wish to transfer to a child that does not qualify for Proposition 19 because it is not your principal residence, the child does not want to move in within one year, or its fair market value is more than $1 million above its assessed value, then consider transferring the property before Proposition 19 takes effect on February 16th, 2021.
 
 
 ## <a id=after-proposition-19>What loopholes still exist after Proposition 19 becomes effective?</a>
@@ -218,13 +218,13 @@ You can still use tax portability to change the percentage ownerships with a thi
 
 ### <a id=family-farm>Turn it into a family farm</a>
 
-Finally, Proposition 19 allows parents to transfer the first $1 million of assessed value of each “family farm”.
+Finally, Proposition 19 allows parents to transfer the first $1 million of assessed value discount of each “family farm”.
 
 What’s a family farm, you might wonder? It turns out that a family farm is defined extremely broadly. A family farm is defined as “any real property which is under cultivation or which is being used for pasture or grazing, or that is used to produce any agricultural commodity, as that term is defined in Section [51201 of the Government Code](http://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=51201.) [Williamson Act] as that section read on January 1, 2020”, which in turn is “any and all plant and animal products produced in this state for commercial purposes…”. But you don’t have to follow any other Williamson Act clauses; the property does not have to be 100 acres, for example. And what does “produce” mean anyway? Does fermenting beer or making jam count? Does cooking food or making cabinets count as “producing” an “agricultural commodity”? It’s up to the courts now.
 
 And then there’s the question of the occupancy requirement. Family homes require the parent and child to live in the house. But do family farms require you to live on it? From the sneaky legal language, it appears that there is no occupancy requirement for family farms, since [Sec. 2.1](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%202.1.&article=XIII%20A)(c)(3) says to replace any reference to “family home” with “family farm” in (1) and (2), but the transferee occupancy requirement in (5) is not replaced and only applies to “family home” so would not apply to “family farm”, and the transferor occupancy requirement in the definition of “family home” does not apply to “family farm” either. So apparently you don’t need to live on a family farm in order to transfer it to a child with the same low assessment.
 
-So if you own some property that is zoned for growing anything, consider turning it into a farm in order to save taxes. For example, if you own a warehouse, maybe you rent it to a company that will install some grow lights and turn it into your family marijuana farm (Proposition 19 doesn’t require the owner to do the farming himself). In addition, if your farm is assessed at more than $1 million, you may be able to subdivide it into lots that are assessed under $1 million in order to transfer it to a child in chunks that can be excluded. There is no limit on how many family farms you can transfer to a child.
+So if you own some property that is zoned for growing anything, consider turning it into a farm in order to save taxes. For example, if you own a warehouse, maybe you rent it to a company that will install some grow lights and turn it into your family marijuana farm (Proposition 19 doesn’t require the owner to do the farming himself). In addition, if your farm’s value is more than $1 million above its assessed value, you may be able to subdivide it into lots that are each worth less than $1 million above the assessed value in order to transfer it to a child in chunks that can be excluded. There is no limit on how many family farms you can transfer to a child.
 
 But for any other property that the parent does not live in at the time of transfer and that cannot be used as a “family farm”, you’re probably out of luck.
 
@@ -234,3 +234,7 @@ But for any other property that the parent does not live in at the time of trans
 Proposition 19 is one small step in the right direction in that it reduces the subsidies for inherited investments and instead emphasizes providing assistance to older people. But the delay before the effective date gives property owners an incentive to expedite their estate plan, and doubtlessly many owners will take advantage of this window of opportunity. You have until the day after Valentine’s Day to transfer your property under the old rule, which allowed transfers of non-principal residence property and did not require the child to live in the house. But don’t stress your old folks out too much; remember that the extra 1.2% property tax per year on the gains and 25% capital gains taxes are much smaller than the principal. And needless to say, family relationships are more important than property. But if you are comfortable having a discussion about succession plans, then this may be an interesting topic of conversation this Thanksgiving.
 
 This blog post is information, not legal advice. Talk to your attorney to see if tax avoidance is right for you.
+
+Edits:
+
+* 2020-11-24 Corrected explanation of Proposition 19’s exclusion on first $1 million of discount
