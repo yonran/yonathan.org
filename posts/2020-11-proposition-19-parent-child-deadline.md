@@ -35,7 +35,7 @@ is_draft: false
 
 ## <a id=introduction>Introduction</a>
 
-On November 3rd, 2020, California voters passed Proposition 19 (a.k.a. [ACA 11](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200ACA11)) which allows qualified individuals (seniors, fire victims, disabled) to transfer their home’s property tax when they move, but when a child inherits property from a parent, their property will be reassessed unless they live there.
+On November 3rd, 2020, California voters passed Proposition 19 (a.k.a. [ACA 11](https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200ACA11)) which allows qualified individuals (seniors, fire victims, people with disabilities) to transfer their home’s property tax when they move, but when a child inherits property from a parent, their property will be reassessed unless they live there.
 
 If you’re reading this, you probably are looking for some loophole to avoid the increase in property tax.
 
@@ -224,7 +224,7 @@ What’s a family farm, you might wonder? It turns out that a family farm is def
 
 And then there’s the question of the occupancy requirement. Family homes require the parent and child to live in the house. But do family farms require you to live on it? From the sneaky legal language, it appears that there is no occupancy requirement for family farms, since [Sec. 2.1](https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CONS&sectionNum=SEC.%202.1.&article=XIII%20A)(c)(3) says to replace any reference to “family home” with “family farm” in (1) and (2), but the transferee occupancy requirement in (5) is not replaced and only applies to “family home” so would not apply to “family farm”, and the transferor occupancy requirement in the definition of “family home” does not apply to “family farm” either. So apparently you don’t need to live on a family farm in order to transfer it to a child with the same low assessment.
 
-So if you own some property that is zoned for growing anything, consider turning it into a farm in order to save taxes. For example, if you own a warehouse, maybe you rent it to a company that will install some grow lights and turn it into your family marijuana farm (Proposition 19 doesn’t require the owner to do the farming himself). In addition, if your farm’s value is more than $1 million above its assessed value, you may be able to subdivide it into lots that are each worth less than $1 million above the assessed value in order to transfer it to a child in chunks that can be excluded. There is no limit on how many family farms you can transfer to a child.
+So if you own some property that is zoned for growing anything, consider turning it into a farm in order to save taxes. For example, if you own a warehouse, maybe you can rent it to a company that will install some grow lights and turn it into your family marijuana farm (Proposition 19 doesn’t require the owner to do the farming himself). In addition, if your farm’s value is more than $1 million above its assessed value, you may be able to subdivide it into lots that are each worth less than $1 million above the assessed value in order to transfer it to a child in chunks that can be excluded. There is no limit on how many family farms you can transfer to a child.
 
 But for any other property that the parent does not live in at the time of transfer and that cannot be used as a “family farm”, you’re probably out of luck.
 
