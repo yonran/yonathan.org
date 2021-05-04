@@ -1,3 +1,4 @@
+---
 layout: default.liquid
 
 title: "Everything you need to know about California Proposition 19: implications, deadline, and loopholes"

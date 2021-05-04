@@ -1,3 +1,4 @@
+---
 layout: default.liquid
 
 title: Proposition 10 in depth (Costa-Hawkins repeal and rent control expansion)

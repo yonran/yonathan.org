@@ -1,3 +1,4 @@
+---
 layout: default.liquid
 
 title: Stop Quoting the Residential Nexus Analysis

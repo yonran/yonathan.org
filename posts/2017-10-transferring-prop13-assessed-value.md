@@ -1,3 +1,4 @@
+---
 layout: default.liquid
 
 title: How to keep a low Proposition 13 property tax when you transfer property in California
