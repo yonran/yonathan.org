@@ -27,7 +27,7 @@ is_draft: false
   * <a href="#other">More options to discuss with your lawyer</a>
 * <a href="#after-proposition-19">What loopholes still exist after Proposition 19 becomes effective?</a>
   * <a href="#one-transferee-in-trust">If there are multiple children, give the property to the one who wants it</a>
-  * <a href="#leave-after-inheriting">Child can move out later after inheriting</a>
+  * <a href="#leave-after-inheriting">Child will lose exclusion if he moves out unless another relative moves in</a>
   * <a href="#multiple-family-homes">Multiple family home transfers in your life</a>
   * <a href="#base-year-value-transfer-change-owners">Base year value transfer to change owners</a>
   * <a href="#family-farm">Turn it into a family farm</a>
@@ -201,10 +201,26 @@ If you are reading this message after Proposition 19 goes into effect on Feb. 16
 When a parent dies and her home is in a trust, the trustee can still arrange for one of the children to receive the house while the other children inherit cash. But due to Proposition 19, the child must move in within one year for the transfer to be excluded from change in ownership.
 
 
-### <a id=leave-after-inheriting>Child can move out later after inheriting</a>
+### <a id=leave-after-inheriting>Child will lose exclusion if he moves out unless another relative moves in</a>
 
-Although the child who inherits a family home must live in it initially, the child is still allowed to move out and rent out the house later. Unlike an alternate proposal to close the inheritance loophole for rental properties that did not pass the legislature ([SCA 3](http://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201920200SCA3)), Proposition 19 does not trigger reassessment the moment that the child moves out of the house he inherited. However, if the child moves in only for the parent-child exclusion and then moves out right away, then the assessor may combine the suspicious steps into a single step under the “step transaction doctrine” and reappraise the property.
+Proposition 19 claimed that the parent-child exclusion applies
+“if the property continues as the family home of the transferee.”
+According to the [Board of Equalization’s interpretations](https://www.boe.ca.gov/prop19/#Guidance)
+(particularly the 1/9/2021 [Initial Interpretational Questions and Answers](https://www.boe.ca.gov/meetings/pdf/2021/011421-M1a1-Legal-Analysis.pdf),
+the [2/16 Q&A](https://www.boe.ca.gov/proptaxes/pdf/lta21008.pdf)
+and the [3/5 Proposed Property Tax Rule 462.520](https://www.boe.ca.gov/proptaxes/pdf/lta21010.pdf)),
+if a parent transfers a family home to a child but then the child later moves out,
+then at the time the child moves out, he will no longer qualify
+for the the parent-child exclusion and the property will be assessed
+at the base year value using the appraisal on the date of the parent-child transfer.
 
+To avoid an increased assessment,
+according to the [proposed Rule 462.520](https://www.boe.ca.gov/proptaxes/pdf/lta21010.pdf),
+if another co-owner sibling moves in within one year,
+then the other co-owner will continue to qualify for the parent-child exclusion.
+So if multiple siblings inherit a family home,
+they can take turns living in it to keep the parent’s tax discount.
+Or the child can transfer the house to his own spouse, child, or parent to keep the exclusion going.
 
 ### <a id=multiple-family-homes>Multiple family home transfers in your life</a>
 
@@ -226,6 +242,12 @@ And then there’s the question of the occupancy requirement. Family homes requi
 
 So if you own some property that is zoned for growing anything, consider turning it into a farm in order to save taxes. For example, if you own a warehouse, maybe you can rent it to a company that will install some grow lights and turn it into your family marijuana farm (Proposition 19 doesn’t require the owner to do the farming himself). In addition, if your farm’s value is more than $1 million above its assessed value, you may be able to subdivide it into lots that are each worth less than $1 million above the assessed value in order to transfer it to a child in chunks that can be excluded. There is no limit on how many family farms you can transfer to a child.
 
+However, note that if the property ceases to be used as a “family farm”,
+then the owner will lose the parent-child exclusion
+([proposed Rule 462.520](https://www.boe.ca.gov/proptaxes/pdf/lta21010.pdf))
+because Proposition 19’s parent-child exclusion only applies
+“if the property continues as the family \[farm\] of the transferee.”
+
 But for any other property that the parent does not live in at the time of transfer and that cannot be used as a “family farm”, you’re probably out of luck.
 
 
@@ -238,3 +260,4 @@ This blog post is information, not legal advice. Talk to your attorney to see if
 Edits:
 
 * 2020-11-24 Corrected explanation of Proposition 19’s exclusion on first $1 million of discount
+* 2021-05-04 Removed claim that child can move out after inheriting based on updated guidance
