@@ -1,7 +1,7 @@
 #!/bin/sh -xe
 SCRIPT_DIR=$(cd $(dirname $0); pwd)
 
-# prereq: install cobalt-bin
+# prereq: cargo install cobalt-bin
 cd $SCRIPT_DIR/.. && cobalt build && 
 cd $SCRIPT_DIR && npm run build-images &&
 cd $SCRIPT_DIR/.. &&
