@@ -1,7 +1,7 @@
 ---
 layout: default.liquid
 
-title: "Oppose Peskin’s Group Housing Ordinances"
+title: "Keep Group Housing"
 published_date: 2022-02-03 04:00:00 -0800
 data:
   is_post: true
