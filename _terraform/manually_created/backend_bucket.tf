@@ -1,18 +1,18 @@
 variable "account_id" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 variable "backend_access_key_id" {
-    type = string
+  type = string
 }
 variable "backend_secret_access_key" {
-    type = string
-    sensitive = true
+  type      = string
+  sensitive = true
 }
 provider "aws" {
   access_key = var.backend_access_key_id
   secret_key = var.backend_secret_access_key
-   # https://developers.cloudflare.com/r2/platform/s3-compatibility/api/#bucket-region
+  # https://developers.cloudflare.com/r2/platform/s3-compatibility/api/#bucket-region
   region = "auto"
   # fix error validating provider credentials: error calling sts:GetCallerIdentity
   # … lookup sts.auto.amazonaws.com on …: no such host
@@ -38,5 +38,5 @@ provider "aws" {
 
 resource "aws_s3_bucket" "terraform" {
   provider = aws.cloudflare_r2
-    bucket = "terraform-backends"
+  bucket   = "terraform-backends"
 }

@@ -31,4 +31,5 @@ jobs:
         working-directory: _cloudflare_worker
       - run: npx tsc --noEmit
         working-directory: _cloudflare_worker
-      - run: terraform fmt -check -workdir=_terraform
+      - run: terraform fmt -check -recursive
+        working-directory: _terraform
