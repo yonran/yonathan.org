@@ -125,6 +125,7 @@ jobs:
           key: ${{ runner.os }}-build-terraform-plugins
           restore-keys: |
             ${{ runner.os }}-build-terraform-plugins
+      - run: mkdir -p ~/.terraform.d/plugin-cache
       - uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.1.7
