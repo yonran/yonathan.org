@@ -82,6 +82,7 @@ jobs:
   build-cloudflare-workers:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
           node-version: '16'
@@ -95,6 +96,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-terraform-provider-cloudflare, build-terraform-provider-aws]
     steps:
+      - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
         with:
           name: terraform-provider-cloudflare
