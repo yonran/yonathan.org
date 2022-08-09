@@ -1,0 +1,170 @@
+name: test-build
+on:
+  push:
+  pull_request:
+jobs:
+  build-terraform-provider-cloudflare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        # git clone -b cloudflare_worker_script.r2_bucket_binding --single-branch https://github.com/yonran/terraform-provider-cloudflare
+        with:
+          repository: yonran/terraform-provider-cloudflare
+          ref: cloudflare_worker_script.r2_bucket_binding
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.4'
+          cache: true
+      - run: go build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: terraform-provider-cloudflare
+          path: terraform-provider-cloudflare
+          retention-days: 1
+  build-terraform-provider-aws:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        # - run: git clone -b cloudflare-no-s3-object-tags --single-branch https://github.com/yonran/terraform-provider-aws
+        with:
+          repository: yonran/terraform-provider-aws
+          ref: cloudflare-no-s3-object-tags
+      - uses: actions/setup-go@v3
+        with:
+          go-version: '1.18.4'
+          cache: true
+      - run: go build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: terraform-provider-aws
+          path: terraform-provider-aws
+          retention-days: 1
+  build-cobalt:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Cache cargo checkouts
+        id: cache-cargo
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-cargo
+        with:
+          path: ~/.cargo
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/Cargo.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - run: cargo install cobalt-bin@0.18.0
+      - run: cobalt build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: site
+          path: _site/
+          retention-days: 30
+  build-images:
+    runs-on: ubuntu-latest
+    needs: [build-cobalt]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: npm
+          cache-dependency-path: _setup/package-lock.json
+      - run: npm ci
+        working-directory: _setup
+      - run: npm test
+        working-directory: _setup
+      - uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: _site/
+      - run: npm run build-images
+        working-directory: _setup
+      - uses: actions/upload-artifact@v3
+        with:
+          # update the artifact with the svg files
+          name: site
+          path: _site/
+          retention-days: 30
+  build-cloudflare-workers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: npm
+          cache-dependency-path: _cloudflare_worker/package-lock.json
+      - run: npm ci
+        working-directory: _cloudflare_worker
+      - run: npx tsc
+        working-directory: _cloudflare_worker
+      - uses: actions/upload-artifact@v3
+        with:
+          name: cloudflare-worker
+          path: _cloudflare_worker/lib/
+          retention-days: 1
+  terraform-validate:
+    runs-on: ubuntu-latest
+    needs: [build-terraform-provider-cloudflare, build-terraform-provider-aws, build-images, build-cloudflare-workers]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: terraform-provider-cloudflare
+      - uses: actions/download-artifact@v3
+        with:
+          name: terraform-provider-aws
+      - uses: actions/download-artifact@v3
+        with:
+          name: site
+          path: _site/
+      - uses: actions/download-artifact@v3
+        with:
+          name: cloudflare-worker
+          path: _cloudflare_worker/lib/
+      - run: chmod +x terraform-provider-cloudflare terraform-provider-aws
+      - run: |-
+          cat <<EOF > ~/.terraformrc
+          # override with self-built plugins
+          # https://www.terraform.io/cli/config/config-file#development-overrides-for-provider-developers
+          provider_installation {
+            dev_overrides {
+              "cloudflare/cloudflare" = "$(pwd)"
+              "hashicorp/aws" = "$(pwd)"
+            }
+
+            # For all other providers, install them directly from their origin provider
+            # registries as normal. If you omit this, Terraform will _only_ use
+            # the dev_overrides block, and so no other providers will be available.
+            direct {}
+          }
+          # enable plugin cache to save time downloading
+          # https://www.terraform.io/cli/config/config-file#provider-plugin-cache
+          plugin_cache_dir = "$HOME/.terraform.d/plugin-cache"
+          EOF
+      - name: Cache terraform plugins
+        id: terraform-plugins
+        uses: actions/cache@v3
+        with:
+          path: ~/.terraform.d/plugin-cache
+          key: ${{ runner.os }}-build-terraform-plugins
+          restore-keys: |
+            ${{ runner.os }}-build-terraform-plugins
+      - run: mkdir -p ~/.terraform.d/plugin-cache
+      - uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.1.7
+      - run: terraform -chdir=_terraform fmt -check -recursive
+      - run: |
+          terraform -chdir=_terraform init \
+            -backend-config="secret_key=$TF_VAR_backend_secret_access_key" \
+            -backend-config="access_key=$TF_VAR_backend_access_key_id" \
+            -backend-config="endpoint=https://$TF_VAR_account_id.r2.cloudflarestorage.com"
+        env:
+          TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+      - run: terraform -chdir=_terraform validate
