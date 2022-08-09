@@ -1,6 +1,6 @@
 # Blog
 
-This is 
+This is the source for my personal blog.
 
 ## Manual setup
 
@@ -29,7 +29,7 @@ so that has to be created using the gui.
 [deploy.yaml](.github/workflows/deploy.yaml) depends on several secrets:
 
 * `CLOUDFLARE_ACCOUNT_ID`
-* `CLOUDFLARE_API_TOKEN`
-* `CLOUDFLARE_R2_ACCESS_KEY_ID` and `CLOUDFLARE_R2_SECRET_ACCESS_KEY`: S3-compatible R2 secrets generated above
-* `ARTIFACT_ENCRYPTION_PASSWORD`: any random password to encrypt the tfplan within the artifact.
+* `CLOUDFLARE_API_TOKEN` API Token described above
+* `CLOUDFLARE_R2_ACCESS_KEY_ID` and `CLOUDFLARE_R2_SECRET_ACCESS_KEY`: S3-compatible S3 Auth token described above
+* `ARTIFACT_ENCRYPTION_PASSWORD`: any random password to encrypt the secret tfplan within the artifact.
 I used `openssl rand -base64 32` to generate one.
