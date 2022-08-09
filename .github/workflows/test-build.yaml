@@ -19,6 +19,7 @@ jobs:
         working-directory: _setup
       - run: npm test
         working-directory: _setup
+      - run: mkdir -p _site/images
       - run: npm run build-images
         working-directory: _setup
       - uses: actions/setup-node@v3
