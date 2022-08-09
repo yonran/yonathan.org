@@ -130,10 +130,13 @@ jobs:
         with:
           terraform_version: 1.1.7
       - run: terraform -chdir=_terraform fmt -check -recursive
-      - run: terraform -chdir=_terraform init
+      - run: |
+          terraform -chdir=_terraform init \
+            -backend-config="secret-key=$TF_VAR_backend_secret_access_key" \
+            -backend-config="access-key=$TF_VAR_backend_access_key_id" \
+            -backend-config="endpoint=https://$TF_VAR_account_id.r2.cloudflarestorage.com"
         env:
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
       - run: terraform -chdir=_terraform validate
