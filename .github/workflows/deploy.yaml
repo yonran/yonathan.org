@@ -117,8 +117,8 @@ jobs:
         working-directory: _cloudflare_worker
       - run: npx tsc
         working-directory: _cloudflare_worker
-      - run: terraform -workdir=_terraform init
-      - run: terraform -workdir=_terraform plan -no-color -out=../tfplan
+      - run: terraform -chdir=_terraform init
+      - run: terraform -chdir=_terraform plan -no-color -out=../tfplan
         env:
           TF_VAR_account_id = ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           TF_VAR_cloudflare_api_token = ${{ secrets.CLOUDFLARE_API_TOKEN }}

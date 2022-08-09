@@ -129,7 +129,6 @@ jobs:
       - uses: hashicorp/setup-terraform@v2
         with:
           terraform_version: 1.1.7
-      - run: terraform fmt -check -recursive
-        working-directory: _terraform
-      - run: terraform -workdir=_terraform init
-      - run: terraform -workdir=_terraform validate
+      - run: terraform -chdir=_terraform fmt -check -recursive
+      - run: terraform -chdir=_terraform init
+      - run: terraform -chdir=_terraform validate
