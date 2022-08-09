@@ -119,16 +119,16 @@ jobs:
         working-directory: _cloudflare_worker
       - run: terraform -chdir=_terraform init
         env:
-          TF_VAR_account_id = ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          TF_VAR_cloudflare_api_token = ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          TF_VAR_backend_access_key_id = ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
-          TF_VAR_backend_secret_access_key = ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
       - run: terraform -chdir=_terraform plan -no-color -out=../tfplan
         env:
-          TF_VAR_account_id = ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          TF_VAR_cloudflare_api_token = ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          TF_VAR_backend_access_key_id = ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
-          TF_VAR_backend_secret_access_key = ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
       - run: openssl enc -aes-256-cbc -pbkdf2 -iter 20000 -in tfplan -out tfplan.enc -pass env:TFPLAN_KEY
         env:
           TFPLAN_KEY: ${{ secrets.ARTIFACT_ENCRYPTION_PASSWORD }}
