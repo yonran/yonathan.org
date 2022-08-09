@@ -119,8 +119,8 @@ jobs:
         working-directory: _cloudflare_worker
       - run: |
           terraform -chdir=_terraform init \
-            -backend-config="secret-key=$TF_VAR_backend_secret_access_key" \
-            -backend-config="access-key=$TF_VAR_backend_access_key_id" \
+            -backend-config="secret_key=$TF_VAR_backend_secret_access_key" \
+            -backend-config="access_key=$TF_VAR_backend_access_key_id" \
             -backend-config="endpoint=https://$TF_VAR_account_id.r2.cloudflarestorage.com"
         env:
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
