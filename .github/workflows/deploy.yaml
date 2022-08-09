@@ -12,13 +12,10 @@ jobs:
         with:
           repository: yonran/terraform-provider-cloudflare
           ref: cloudflare_worker_script.r2_bucket_binding
-      - name: cache
-        id: go-cache
-        uses: actions/cache@v3
+      - uses: actions/setup-go@v3
         with:
-          # https://go.dev/doc/go1.10 go env GOCACHE
-          path: ~/.cache/go-cache
-          key: ${{ runner.os }}-go-cache
+          go-version: '1.18.4'
+          cache: true
       - run: go build
       - uses: actions/upload-artifact@v3
         with:
@@ -33,13 +30,10 @@ jobs:
         with:
           repository: yonran/terraform-provider-aws
           ref: cloudflare-no-s3-object-tags
-      - name: cache
-        id: go-cache
-        uses: actions/cache@v3
+      - uses: actions/setup-go@v3
         with:
-          # https://go.dev/doc/go1.10 go env GOCACHE
-          path: ~/.cache/go-cache
-          key: ${{ runner.os }}-go-cache
+          go-version: '1.18.4'
+          cache: true
       - run: go build
       - uses: actions/upload-artifact@v3
         with:
