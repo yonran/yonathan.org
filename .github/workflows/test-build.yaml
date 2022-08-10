@@ -78,6 +78,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: site
+          path: _site/
       - run: npm run build-images
         working-directory: _setup
       - uses: actions/upload-artifact@v3
@@ -118,6 +119,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: site
+          path: _site/
       - uses: actions/download-artifact@v3
         with:
           name: cloudflare-worker
