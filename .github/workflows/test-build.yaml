@@ -64,6 +64,7 @@ jobs:
           retention-days: 1
   build-images:
     runs-on: ubuntu-latest
+    needs: [build-cobalt]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
@@ -107,7 +108,7 @@ jobs:
           retention-days: 1
   terraform-validate:
     runs-on: ubuntu-latest
-    needs: [build-terraform-provider-cloudflare, build-terraform-provider-aws]
+    needs: [build-terraform-provider-cloudflare, build-terraform-provider-aws, build-images, build-cloudflare-workers]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
