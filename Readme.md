@@ -4,21 +4,17 @@ This is the source for my personal blog.
 
 ## Manual setup
 
-[Purchase R2](https://developers.cloudflare.com/r2/get-started/#purchase-r2):
-Within `https://dash.cloudflare.com/<ACCOUNT_ID>/r2/plans`,
-Under “Get started with R2”, click “Purchase R2 Plan”.
+Create an [Account API Token](https://dash.cloudflare.com/?to=/:account/api-tokens). Under Permission policies, add 3 policies:
 
-[Generate an S3 Auth token](https://developers.cloudflare.com/r2/platform/s3-compatibility/tokens/):
-Within `https://dash.cloudflare.com/<ACCOUNT_ID>/r2/api-tokens`,
-click “Create API token”.
-
-Generate an API Token: within [profile api tokens](https://dash.cloudflare.com/profile/api-tokens),
-create an api token with permissions:
-
-* Account; Workers Scripts; Edit. (cloudflare_worker_script)
-* Zone; DNS; Edit. (cloudflare_record)
-* Zone; SSL and Certificates; Edit. (cloudflare_certificate_pack)
-* Zone; Workers Routes; Edit. (cloudflare_worker_route)
+1. Entire account
+  * Workers Scripts ☑️ Edit
+  * Workers R2 Storage ☑️ Read (needed for aws_s3_bucket’s GetBucketAcl; can be removed after we switch to cloudflare_r2_bucket)
+2. Specified Domains (previously Zone); select the domain.
+  * DNS ☑️ Edit (cloudflare_record)
+  * SSL and Certificates ☑️ Edit (cloudflare_certificate_pack)
+  * Workers Routes ☑️ Edit (cloudflare_worker_route)
+3. R2 Buckets: `terraform-backends`, `yonathan-static-files`
+  * Workers R2 Storage Bucket Item ☑️ Edit
 
 terraform-provider-cloudflare does not support updating
 [Registrar Domains](https://api.cloudflare.com/#registrar-domains-properties)
@@ -28,7 +24,7 @@ so that has to be created using the gui.
 
 [deploy.yaml](.github/workflows/deploy.yaml) depends on several secrets:
 
-* `CLOUDFLARE_ACCOUNT_ID`
+* `CLOUDFLARE_ACCOUNT_ID` Account ID from URL of dashboard or from “Account Details” in [R2 Object Storage: Overview](https://dash.cloudflare.com/?to=/:account/r2/overview)
 * `CLOUDFLARE_API_TOKEN` API Token described above
 * `CLOUDFLARE_R2_ACCESS_KEY_ID` and `CLOUDFLARE_R2_SECRET_ACCESS_KEY`: S3-compatible S3 Auth token described above
 * `ARTIFACT_ENCRYPTION_PASSWORD`: any random password to encrypt the secret tfplan within the artifact.
