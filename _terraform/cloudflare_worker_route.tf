@@ -1,6 +1,6 @@
 resource "cloudflare_worker_route" "static_files_worker" {
   zone_id     = cloudflare_zone.main.id
-  pattern     = "https://${local.main_subdomain}/staging/*"
+  pattern     = "https://${local.main_subdomain}/*"
   script_name = cloudflare_worker_script.static_files_worker.name
 }
 
@@ -9,7 +9,7 @@ resource "cloudflare_worker_route" "static_files_worker" {
 // does not support creating Transform Rules
 resource "cloudflare_worker_route" "redirect_http_to_https_worker" {
   zone_id     = cloudflare_zone.main.id
-  pattern     = "http://*${local.zone_name}/staging/*"
+  pattern     = "*/*"
   script_name = cloudflare_worker_script.redirect_http_to_https_worker.name
 }
 
@@ -18,6 +18,6 @@ resource "cloudflare_worker_route" "redirect_http_to_https_worker" {
 // does not support creating Transform Rules
 resource "cloudflare_worker_route" "redirect_apex_to_blog" {
   zone_id     = cloudflare_zone.main.id
-  pattern     = "https://*${local.zone_name}/staging/*"
+  pattern     = "https://*/*"
   script_name = cloudflare_worker_script.redirect_apex_to_blog.name
 }
