@@ -4,7 +4,7 @@ resource "cloudflare_worker_script" "static_files_worker" {
   content    = file("../_cloudflare_worker/lib/static_files.js")
   r2_bucket_binding {
     name        = "MY_BUCKET"
-    bucket_name = aws_s3_bucket.serving.bucket
+    bucket_name = cloudflare_r2_bucket.serving.name
   }
 }
 
