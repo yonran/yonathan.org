@@ -2,17 +2,16 @@ terraform {
   required_providers {
     cloudflare = {
       source  = "cloudflare/cloudflare"
-      version = "~> 3.0"
+      version = "~> 4.0"
     }
   }
 }
 
 provider "cloudflare" {
   api_token = var.cloudflare_api_token
-  # account_id is considered deprecated, but as of 3.20.0
-  # it is still required in the provider
-  # for cloudflare_worker_script
-  account_id = var.account_id
+  # provider-level account_id was removed in v4; each resource that
+  # needs it (cloudflare_zone, cloudflare_worker_script, cloudflare_r2_bucket)
+  # sets account_id explicitly now.
 }
 
 provider "aws" {
@@ -32,8 +31,6 @@ provider "aws" {
   skip_requesting_account_id = true
   # skip loading instance profile credentials from 169.254.169.254
   skip_metadata_api_check = true
-  # skip ec2/DescribeAccountAttributes to ec2.auto.amazonaws.com
-  skip_get_ec2_platforms = true
   endpoints {
     # https://developers.cloudflare.com/r2/platform/s3-compatibility/api/
     s3 = "https://${var.account_id}.r2.cloudflarestorage.com"
