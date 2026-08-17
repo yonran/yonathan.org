@@ -27,7 +27,17 @@ so that has to be created using the gui.
 
 ### Secrets
 
-[deploy.yaml](.github/workflows/deploy.yaml) depends on several secrets:
+[deploy.yaml](.github/workflows/deploy.yaml) depends on several secrets. They must be **repository** secrets,
+not environment secrets: `terraform-plan` runs unscoped (no `environment:`, since it runs on every push/PR
+with no approval gate) and needs the same full credentials as `terraform-apply` to do a real `terraform init`/`plan`
+against the real R2-backed state - there's no narrower "plan-only" credential to split out, so the secret has
+to be repo-scoped for `terraform-plan` to see it at all. Scoping a copy to the `production` environment on top
+of that adds no protection, since the same values are already required to be readable outside the environment
+gate. (The `production` environment's actual value is the required-reviewer approval gate and the
+branch-restricted-to-`master` deployment policy on `terraform-apply`/`sync-r2-objects` - i.e. controlling *when*
+apply is allowed to run, not *what* can read the credentials. Confirmed the plain `pull_request` trigger this repo
+uses, unlike `pull_request_target`, does not expose secrets - repo or environment scoped - to workflow runs from
+forked PRs at all, so repo-scoping these is safe against that class of attack.)
 
 * `CLOUDFLARE_ACCOUNT_ID` Account ID from URL of dashboard or from “Account Details” in [R2 Object Storage: Overview](https://dash.cloudflare.com/?to=/:account/r2/overview)
 * `CLOUDFLARE_API_TOKEN` API Token described above
