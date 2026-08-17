@@ -8,10 +8,10 @@ jobs:
   build-cobalt:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Cache cargo checkouts
         id: cache-cargo
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         env:
           cache-name: cache-cargo
         with:
@@ -23,7 +23,7 @@ jobs:
             ${{ runner.os }}-
       - run: cargo install cobalt-bin@0.18.0
       - run: cobalt build
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: site
           path: _site/
@@ -32,8 +32,8 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-cobalt]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '16'
           cache: npm
@@ -42,23 +42,26 @@ jobs:
         working-directory: _setup
       - run: npm test
         working-directory: _setup
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: site
           path: _site/
       - run: npm run build-images
         working-directory: _setup
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           # update the artifact with the svg files
+          # v4 requires overwrite: true to re-upload the same artifact name
+          # (v3 merged silently; v4 artifacts are immutable by default)
           name: site
           path: _site/
           retention-days: 90
+          overwrite: true
   build-cloudflare-workers:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: '16'
           cache: npm
@@ -67,7 +70,7 @@ jobs:
         working-directory: _cloudflare_worker
       - run: npx tsc
         working-directory: _cloudflare_worker
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: cloudflare-worker
           path: _cloudflare_worker/lib/
@@ -76,18 +79,18 @@ jobs:
     runs-on: ubuntu-latest
     needs: [build-images, build-cloudflare-workers]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: site
           path: _site/
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: cloudflare-worker
           path: _cloudflare_worker/lib/
       - name: Cache terraform plugins
         id: terraform-plugins
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.terraform.d/plugin-cache
           key: ${{ runner.os }}-build-terraform-plugins
@@ -116,7 +119,7 @@ jobs:
       - run: openssl enc -aes-256-cbc -pbkdf2 -iter 20000 -in tfplan -out tfplan.enc -pass env:TFPLAN_KEY
         env:
           TFPLAN_KEY: ${{ secrets.ARTIFACT_ENCRYPTION_PASSWORD }}
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: tfplan
           # terraform files, tfplan file, and sources of aws_s3_object
@@ -127,18 +130,18 @@ jobs:
     environment: production
     needs: [terraform-plan]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
         with:
           name: site
           path: _site/
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: cloudflare-worker
           path: _cloudflare_worker/lib/
       - name: Cache terraform plugins
         id: terraform-plugins
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.terraform.d/plugin-cache
           key: ${{ runner.os }}-build-terraform-plugins
@@ -157,7 +160,7 @@ jobs:
           TF_VAR_account_id: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: tfplan
       - run: openssl enc -d -aes-256-cbc -pbkdf2 -iter 20000 -in tfplan.enc -out tfplan -pass env:TFPLAN_KEY
@@ -177,7 +180,7 @@ jobs:
     # manages individual objects - GetObjectTagging is incompatible with R2)
     needs: [terraform-apply]
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: site
           path: _site/
