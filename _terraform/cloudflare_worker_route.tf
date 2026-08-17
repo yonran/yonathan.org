@@ -8,8 +8,9 @@ resource "cloudflare_worker_route" "static_files_worker" {
 // but terraform-provider-cloudflare as of 3.20.0
 // does not support creating Transform Rules
 resource "cloudflare_worker_route" "redirect_http_to_https_worker" {
+  for_each    = toset(["", "*."])
   zone_id     = cloudflare_zone.main.id
-  pattern     = "*/*"
+  pattern     = "http://${each.key}${local.zone_name}/*"
   script_name = cloudflare_worker_script.redirect_http_to_https_worker.name
 }
 
@@ -17,7 +18,8 @@ resource "cloudflare_worker_route" "redirect_http_to_https_worker" {
 // but terraform-provider-cloudflare as of 3.20.0
 // does not support creating Transform Rules
 resource "cloudflare_worker_route" "redirect_apex_to_blog" {
+  for_each    = toset(["", "*."])
   zone_id     = cloudflare_zone.main.id
-  pattern     = "https://*/*"
+  pattern     = "https://${each.key}${local.zone_name}/*"
   script_name = cloudflare_worker_script.redirect_apex_to_blog.name
 }
