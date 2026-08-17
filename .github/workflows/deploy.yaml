@@ -125,6 +125,15 @@ jobs:
           # terraform files, tfplan file, and sources of aws_s3_object
           path: tfplan.enc
           retention-days: 1
+      - run: sudo apt-get update && sudo apt-get install -y rclone
+      - run: |
+          rclone sync _site/ \
+            ":s3,provider=Cloudflare,access_key_id=$R2_ACCESS_KEY_ID,secret_access_key=$R2_SECRET_ACCESS_KEY,endpoint=https://$ACCOUNT_ID.r2.cloudflarestorage.com:yonathan-static-files" \
+            --checksum --delete-during --exclude ".DS_Store" --dry-run
+        env:
+          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
   terraform-apply:
     runs-on: ubuntu-latest
     environment: production
@@ -172,18 +181,6 @@ jobs:
           TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
-  sync-r2-objects:
-    runs-on: ubuntu-latest
-    environment: production
-    # depends on terraform-apply so the bucket is guaranteed to exist first;
-    # not otherwise related to the Terraform state (aws_s3_object no longer
-    # manages individual objects - GetObjectTagging is incompatible with R2)
-    needs: [terraform-apply]
-    steps:
-      - uses: actions/download-artifact@v4
-        with:
-          name: site
-          path: _site/
       - run: sudo apt-get update && sudo apt-get install -y rclone
       - run: |
           rclone sync _site/ \
