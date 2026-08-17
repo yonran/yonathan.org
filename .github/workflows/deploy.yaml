@@ -126,14 +126,13 @@ jobs:
           path: tfplan.enc
           retention-days: 1
       - run: sudo apt-get update && sudo apt-get install -y rclone
-      - run: |
-          rclone sync _site/ \
-            ":s3,provider=Cloudflare,access_key_id=$R2_ACCESS_KEY_ID,secret_access_key=$R2_SECRET_ACCESS_KEY,endpoint=https://$ACCOUNT_ID.r2.cloudflarestorage.com:yonathan-static-files" \
-            --checksum --delete-during --exclude ".DS_Store" --dry-run
+      - run: rclone sync _site/ r2:yonathan-static-files --checksum --delete-during --exclude ".DS_Store" --dry-run
         env:
-          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
   terraform-apply:
     runs-on: ubuntu-latest
     environment: production
@@ -182,11 +181,10 @@ jobs:
           TF_VAR_backend_access_key_id: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
           TF_VAR_backend_secret_access_key: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
       - run: sudo apt-get update && sudo apt-get install -y rclone
-      - run: |
-          rclone sync _site/ \
-            ":s3,provider=Cloudflare,access_key_id=$R2_ACCESS_KEY_ID,secret_access_key=$R2_SECRET_ACCESS_KEY,endpoint=https://$ACCOUNT_ID.r2.cloudflarestorage.com:yonathan-static-files" \
-            --checksum --delete-during --exclude ".DS_Store"
+      - run: rclone sync _site/ r2:yonathan-static-files --checksum --delete-during --exclude ".DS_Store"
         env:
-          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
-          R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_TYPE: s3
+          RCLONE_CONFIG_R2_PROVIDER: Cloudflare
+          RCLONE_CONFIG_R2_ACCESS_KEY_ID: ${{ secrets.CLOUDFLARE_R2_ACCESS_KEY_ID }}
+          RCLONE_CONFIG_R2_SECRET_ACCESS_KEY: ${{ secrets.CLOUDFLARE_R2_SECRET_ACCESS_KEY }}
+          RCLONE_CONFIG_R2_ENDPOINT: https://${{ secrets.CLOUDFLARE_ACCOUNT_ID }}.r2.cloudflarestorage.com
