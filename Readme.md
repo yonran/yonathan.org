@@ -8,7 +8,12 @@ Create an [Account API Token](https://dash.cloudflare.com/?to=/:account/api-toke
 
 1. Entire account
   * Workers Scripts ☑️ Edit
-  * Workers R2 Storage ☑️ Read (needed for aws_s3_bucket’s GetBucketAcl; can be removed after we switch to cloudflare_r2_bucket)
+  * Workers R2 Storage ☑️ Read (needed for cloudflare_r2_bucket’s read, `GET /accounts/{account_id}/r2/buckets/{bucket_name}`.
+    Per the [R2 API tokens docs](https://developers.cloudflare.com/r2/api/tokens/), this is the only permission that
+    covers “list buckets and view bucket configuration” — there is no bucket-scoped equivalent; the bucket-scoped
+    “Workers R2 Storage Bucket Item” policy below is object-level only and does not cover it, confirmed empirically
+    by removing this permission and watching `cloudflare_r2_bucket` reads fail. This does mean the token can read/list
+    objects in every R2 bucket on the account, not just the ones below — there’s no way to scope it down further.)
 2. Specified Domains (previously Zone); select the domain.
   * DNS ☑️ Edit (cloudflare_record)
   * SSL and Certificates ☑️ Edit (cloudflare_certificate_pack)
